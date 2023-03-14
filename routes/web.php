@@ -9,50 +9,50 @@ $router->get('/', function(){
 });
 
 // ============= CHART DATA =============
-$router->get('/chartData', 'ChartDataController@onAllSelect');
+$router->get('/chartData', ['middleware' => 'auth','uses' => 'ChartDataController@onAllSelect']);
 
 
 // ============= CLIENT REVIEW =============
-$router->get('/testimonial', 'ClientReviewController@onAllSelect');
+$router->get('/testimonial', ['middleware' => 'auth','uses' => 'ClientReviewController@onAllSelect']);
 
 
 // ============= CONTACT TABLE =============
-$router->post('/contactPost', 'ContactTableController@onContactSend');
+$router->post('/contactPost', ['middleware' => 'auth','uses' => 'ContactTableController@onContactSend']);
 
 
 // ============= PROJECT TABLE =============
-$router->get('/projectHome', 'ProjectTabelController@onSelectFour');
-$router->get('/projects', 'ProjectTabelController@onSelectAll');
-// $router->post('/projectDetails', 'ProjectTabelController@onSelectDetails');
-$router->get('/project/{id}', 'ProjectTabelController@onSelectOne');
+$router->get('/projectHome', ['middleware' => 'auth','uses' => 'ProjectTabelController@onSelectFour']);
+$router->get('/projects', ['middleware' => 'auth','uses' => 'ProjectTabelController@onSelectAll']);
+// $router->post('/projectDetails', ['middleware' => 'auth','uses' => 'ProjectTabelController@onSelectDetails']);
+$router->get('/project/{id}', ['middleware' => 'auth','uses' => 'ProjectTabelController@onSelectOne']);
 
 
 
 // ============= FOOTER TABLE =============
-$router->get('/footer', 'FooterTableController@onSelect');
+$router->get('/footer', ['middleware' => 'auth','uses' => 'FooterTableController@onSelect']);
 
 
 // ============= WEBSITE INFO TABLE =============
-$router->get('/info', 'WebsiteInformationController@onSelect');
+$router->get('/info', ['middleware' => 'auth','uses' => 'WebsiteInformationController@onSelect']);
 
 
 // ============= SERVICE TABLE =============
-$router->get('/service', 'ServiceTableController@onSelect');
+$router->get('/service', ['middleware' => 'auth','uses' => 'ServiceTableController@onSelect']);
 
 
 // ============= VIDEO =============
-$router->get('/video', 'VideoController@selectVideo');
+$router->get('/video', ['middleware' => 'auth','uses' => 'VideoController@selectVideo']);
 
 
 // ============= Top Title =============
-$router->get('/topTitle', 'HomeTopTitleController@TopTitle');
+$router->get('/topTitle', ['middleware' => 'auth','uses' => 'HomeTopTitleController@TopTitle']);
 
 
 // ============= Tech Description =============
-$router->get('/techDesc', 'TechDescController@TechDesc');
+$router->get('/techDesc', ['middleware' => 'auth','uses' => 'TechDescController@TechDesc']);
 
 
 // ============= Total Project =============
-$router->get('/totalProject', 'TotalProjectController@TotalProject');
+$router->get('/totalProject', ['middleware' => 'auth','uses' => 'TotalProjectController@TotalProject']);
 
 
